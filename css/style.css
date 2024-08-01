@@ -1,6 +1,6 @@
 :root {
     --gradient: hsl(6, 100%, 80%), hsl(335, 100%, 65%);
-    --pale-blue: hsl(243, 100%, 93%);
+    --pale-blue: rgb(221, 219, 255);
     --grayish-blue: hsl(229, 7%, 55%);
     --dark-blue: hsl(228, 56%, 26%);
     --very--dark-blue: hsl(229, 57%, 11%);
@@ -86,38 +86,49 @@ body {
 .div {
     position: relative;
     width: 80%;
-    margin: 1rem auto;
+    margin: 0 auto;
+    padding: 1rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .div::before {
     content: "";
     display: block;
     position: absolute;
-    top: -.3rem;
+    top: .8rem;
     right: 0;
     width: 0;
     height: 0;
-    border-left: 1.5rem solid transparent;
-    border-top: 1.5rem solid var(--pale-blue);
+    border-left: 2rem solid transparent;
+    border-top: 2rem solid var(--pale-blue);
+}
+
+.used {
+    width: 100%;
+    text-align: left;
 }
 
 .gb__left {
     position: absolute;
-    top: -4rem;
+    height: fit-content;
+    right: 0;
+    top: -2.5rem;
     padding: 1rem;
     width: 38%;
-    right: 0;
     background-color: var(--pale-blue);
-    border-radius: .3rem;
+    border-radius: .8rem;
+    z-index: 99;
 }
 
 .percentage {
     color: var(--very--dark-blue);
     font-size: 3rem;
-
 }
 
-.gb__left p {
+.gb__left {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -153,7 +164,7 @@ body {
 }
 
 .gb__capacity {
-
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -163,4 +174,214 @@ span,
 .gb__capacity p {
     font-weight: var(--big-fw);
     line-height: 2rem;
+}
+
+@media (max-width : 1284px) and (min-width : 1059px) , (max-width : 849px) and (min-width : 500px)
+{
+    .tracking .circle{
+        width: 4%;
+    }
+}
+
+@media (max-width : 1344px) and (min-width : 1285px) {
+    .gb__left {
+        width: 35%;
+    }
+
+    .percentage {
+        font-size: 2.7rem;
+    }
+
+    .gb__left p {
+        font-size: .65rem;
+
+    }
+}
+
+@media (max-width : 1284px) and (min-width : 1171px) {
+    .gb__left {
+        width: 36%;
+    }
+
+    .percentage {
+        font-size: 2.49rem;
+    }
+
+    .gb__left p {
+        font-size: .6rem;
+
+    }
+}
+
+@media (max-width : 1170px) and (min-width : 1059px) {
+    .gb__left {
+        padding: 1rem .5rem;
+    }
+
+    .percentage {
+        font-size: 2.4rem;
+    }
+
+    .gb__left p {
+        font-size: .65rem;
+
+    }
+}
+
+@media (max-width : 1058px) and (min-width : 850px) {
+    .container {
+        width: 85%;
+    }
+
+    .gb__left {
+        width: 35%;
+        padding: 1rem .5rem;
+    }
+
+    .percentage {
+        font-size: 2.56rem;
+    }
+
+    .gb__left p {
+        font-size: .68rem;
+    }
+
+    .tracking .circle {
+        width: 3.8%;
+    }
+}
+
+@media (max-width : 849px) and (min-width : 720px) {
+    .container {
+        width: 100%;
+        height: 100vh;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: column;
+    }
+
+    .gb__left {
+        width: 37%;
+        padding: 1rem .4rem;
+    }
+
+    .percentage {
+        font-size: 2.56rem;
+    }
+
+    .gb__left p {
+        font-size: .68rem;
+
+    }
+}
+
+@media (max-width : 719px) and (min-width : 621px) {
+    .container {
+        width: 100%;
+        height: 100vh;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: column;
+    }
+
+    .fylo {
+        width: 50%;
+    }
+
+    .storage {
+        width: 80%;
+    }
+
+    .gb__left {
+        padding: 1rem .7rem;
+    }
+
+}
+
+@media (max-width : 620px) and (min-width : 500px) {
+    .container {
+        width: 100%;
+        height: 100vh;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: column;
+    }
+
+    .fylo {
+        width: 60%;
+    }
+
+    .storage {
+        width: 90%;
+    }
+
+    .gb__left {
+        padding: 1rem .7rem;
+    }
+
+    .percentage {
+        font-size: 2.8rem;
+    }
+
+    .gb__left p {
+        font-size: .7rem;
+
+    }
+}
+
+@media (width <=499px) {
+    body {
+        background: url(../images/bg-mobile.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .container {
+        width: 90%;
+        height: 50vh;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+
+    .fylo {
+        width: 100%;
+    }
+
+    .div {
+        padding-bottom: 3rem;
+    }
+
+    .storage {
+        width: 100%;
+    }
+
+    .gb__left {
+        width: 60%;
+        padding: 1rem 1rem;
+        top: 80%;
+        right: auto;
+        left: auto;
+    }
+
+    .percentage {
+        font-size: 2.2rem;
+    }
+
+    .tracking {
+        width: 70%;
+    }
+
+    .gb__left p {
+        font-size: .7rem;
+
+    }
+
+    .div::before {
+        display: none;
+    }
+
+    .tracking .circle {
+        width: 6.5%;
+    }
 }
